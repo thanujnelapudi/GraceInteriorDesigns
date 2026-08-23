@@ -1,0 +1,141 @@
+---
+// src/pages/categories/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { CATEGORIES } from '../../utils/categories';
+import { getCollection } from 'astro:content';
+
+const allWorks = await getCollection('works');
+const categoriesList = Object.values(CATEGORIES).map(cat => {
+  const count = allWorks.filter(w => w.data.category === cat.slug).length;
+  return { ...cat, count };
+});
+
+const heroImage = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85";
+---
+<Layout title="Categories — Grace Interior Designs" description="Explore our 4 bespoke wall art categories: Wall Murals, Floral Arts, School & Educational Art, and Wall Art & Paintings.">
+  
+  <!-- ═══════════════════════════════════════════════
+       HERO BANNER
+  ═══════════════════════════════════════════════ -->
+  <section class="relative h-[70vh] min-h-[500px] flex flex-col justify-center items-center text-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src={heroImage}
+        alt="Interior Art Studio Collection"
+        class="ken-burns w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <!-- Dark navy overlay for editorial contrast -->
+      <div class="absolute inset-0 bg-brand-primary/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
+      <span class="eyebrow text-brand-accent mb-6 block uppercase tracking-widest text-xs font-semibold">Our Collection</span>
+      <h1 class="font-display text-white text-5xl sm:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+        Discover Art.<br />
+        <span class="italic text-brand-accent font-light">By Category.</span>
+      </h1>
+      <p class="text-white/75 text-lg sm:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+        Explore our four specialized disciplines — handcrafted murals, floral botanical arts, inspiring educational school themes, and luxury wall paintings crafted for luxury spaces.
+      </p>
+      
+      <!-- Scroll indicator -->
+      <div class="mt-16 flex flex-col items-center justify-center gap-2 text-white/50">
+        <span class="text-[10px] uppercase tracking-widest">Scroll to explore</span>
+        <div class="w-px h-12 bg-gradient-to-b from-brand-accent to-transparent animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CATEGORY SHOWCASE (4 Core Disciplines Grid)
+  ═══════════════════════════════════════════════ -->
+  <section class="py-24 px-4 sm:px-6 bg-brand-bg max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {categoriesList.map((cat) => (
+        <a
+          href={`/categories/${cat.slug}`}
+          class="group relative overflow-hidden block min-h-[420px] sm:min-h-[480px] shadow-sm hover:shadow-2xl transition-all duration-500 rounded-sm"
+        >
+          <img
+            src={cat.bgImage}
+            alt={cat.name}
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0"
+          />
+          <!-- Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/40 to-transparent transition-opacity duration-300 group-hover:from-brand-primary/85"></div>
+          
+          <!-- Gold left border on hover -->
+          <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
+          
+          <!-- Content -->
+          <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <div class="flex items-center justify-between mb-3">
+              <span class="eyebrow text-brand-accent block text-xs">Category Discipline</span>
+              <span class="text-xs font-bold text-white/70 uppercase tracking-widest bg-brand-bg/20 backdrop-blur-md px-3 py-1 border border-white/10">
+                {cat.count} {cat.count === 1 ? 'Project' : 'Projects'}
+              </span>
+            </div>
+            
+            <h2 class="font-display text-3xl sm:text-4xl text-white font-bold group-hover:text-brand-accent transition-colors duration-200 mb-3">
+              {cat.name}
+            </h2>
+            
+            <p class="text-white/80 text-sm sm:text-base leading-relaxed line-clamp-2 max-w-xl">
+              {cat.description}
+            </p>
+
+            <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/15">
+              <div class="text-xs text-white/60">
+                Starting from <span class="text-brand-accent font-semibold">{cat.startingPrice}</span>
+              </div>
+              <span class="inline-flex items-center gap-2 text-brand-accent text-sm font-semibold tracking-wide group-hover:translate-x-1 transition-transform">
+                Explore Projects →
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA — Fullscreen closer
+  ═══════════════════════════════════════════════ -->
+  <section class="relative py-28 sm:py-40 px-6 bg-brand-primary text-white text-center overflow-hidden border-t border-brand-accent/10">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="eyebrow text-brand-accent mb-5 block">Start Your Project</span>
+      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
+        Ready to Transform<br />
+        <span class="text-brand-accent italic">Your Walls?</span>
+      </h2>
+      <p class="text-white/70 text-base sm:text-xl font-light mb-12 max-w-xl mx-auto">
+        Let's create something handcrafted exclusively for your space.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+        <a
+          href="https://wa.me/919999999999?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+know+more+about+your+services."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="glow-pulse inline-flex items-center gap-3 bg-brand-accent hover:bg-[#d4901a] text-brand-primary font-bold py-4 px-10 text-lg shadow-xl hover:scale-105 transition-transform duration-200"
+        >
+          <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border border-white/40 hover:border-brand-accent text-white hover:text-brand-accent px-10 py-4 text-base tracking-wide transition-all duration-300"
+        >
+          Send an Enquiry
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

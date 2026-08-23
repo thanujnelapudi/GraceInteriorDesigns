@@ -1,0 +1,158 @@
+---
+// src/components/CaseStudy.astro
+interface Props {
+  id: string;
+  title: string;
+  category: string;
+  location?: string;
+  challenge?: string;
+  solution?: string;
+  result?: string;
+  images: string[];
+  description: string;
+}
+
+const { id, title, category, location, challenge, solution, result, images, description } = Astro.props;
+const mainImage = images[0];
+---
+
+<div class="case-study-wrap grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px] lg:min-h-[700px]">
+  <!-- Left: 2×2 Image Collage Column -->
+  <div class="relative overflow-hidden order-1 bg-[#121b3b]">
+    <div class="h-full min-h-[420px] sm:min-h-[500px] lg:min-h-[640px] grid grid-cols-2 grid-rows-2 gap-1.5 p-1.5 sm:p-2 bg-brand-primary">
+
+      <!-- Top-left: In-progress wide shot -->
+      <div class="relative overflow-hidden group rounded-sm bg-brand-primary/40">
+        <img
+          src="/elephant-progress-1.jpg"
+          alt={`${title} — preparation and scaffolding`}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div class="absolute bottom-2 left-2.5 right-2">
+          <span class="eyebrow text-white/90 text-[10px] tracking-widest font-medium drop-shadow">01 · Scaffolding & Base</span>
+        </div>
+      </div>
+
+      <!-- Top-right: Artist close-up brushstroke detail -->
+      <div class="relative overflow-hidden group rounded-sm bg-brand-primary/40">
+        <img
+          src="/elephant-detail.jpg"
+          alt={`${title} — artist detail`}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div class="absolute bottom-2 left-2.5 right-2">
+          <span class="eyebrow text-white/90 text-[10px] tracking-widest font-medium drop-shadow">02 · Hand Detailing</span>
+        </div>
+      </div>
+
+      <!-- Bottom-left: Two artists sculpting -->
+      <div class="relative overflow-hidden group rounded-sm bg-brand-primary/40">
+        <img
+          src="/elephant-progress-2.jpg"
+          alt={`${title} — sculpting phase`}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div class="absolute bottom-2 left-2.5 right-2">
+          <span class="eyebrow text-white/90 text-[10px] tracking-widest font-medium drop-shadow">03 · 3D Relief Sculpt</span>
+        </div>
+      </div>
+
+      <!-- Bottom-right: Finished mural -->
+      <div class="relative overflow-hidden group rounded-sm bg-brand-primary/40 ring-2 ring-brand-accent/60">
+        <img
+          src="/elephant-final.jpg"
+          alt={`${title} — final completed mural`}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-300"></div>
+        <!-- "Completed Mural" pill badge -->
+        <div class="absolute top-2.5 right-2.5 bg-brand-accent text-brand-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-lg rounded-full">
+          Final Reveal
+        </div>
+        <div class="absolute bottom-2 left-2.5 right-2">
+          <span class="eyebrow text-brand-accent text-[10px] tracking-widest font-bold drop-shadow">04 · Completed Landmark</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Right: Case Study Text -->
+  <div class="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-20 order-2 bg-brand-bg">
+    <!-- Eyebrow -->
+    <span class="eyebrow text-brand-accent mb-4 reveal-up">Featured Project</span>
+
+    <!-- Title -->
+    <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight mb-3 reveal-up" style="transition-delay: 0.1s">
+      {title}
+    </h3>
+
+    <!-- Location -->
+    {location && (
+      <div class="flex items-center gap-2 mb-10 reveal-up" style="transition-delay: 0.15s">
+        <svg class="w-4 h-4 text-brand-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="text-sm text-brand-text/70 tracking-wide">{location}</span>
+      </div>
+    )}
+
+    <!-- Narrative Blocks -->
+    <div class="space-y-7">
+      {challenge && (
+        <div class="reveal-up" style="transition-delay: 0.2s">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-5 h-px bg-brand-accent"></div>
+            <span class="eyebrow text-brand-accent">The Challenge</span>
+          </div>
+          <p class="text-brand-text/80 leading-relaxed text-base pl-8">{challenge}</p>
+        </div>
+      )}
+
+      {solution && (
+        <div class="reveal-up" style="transition-delay: 0.28s">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-5 h-px bg-brand-accent"></div>
+            <span class="eyebrow text-brand-accent">Our Solution</span>
+          </div>
+          <p class="text-brand-text/80 leading-relaxed text-base pl-8">{solution}</p>
+        </div>
+      )}
+
+      {result && (
+        <div class="reveal-up" style="transition-delay: 0.36s">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-5 h-px bg-brand-accent"></div>
+            <span class="eyebrow text-brand-accent">The Result</span>
+          </div>
+          <p class="text-brand-text/80 leading-relaxed text-base pl-8">{result}</p>
+        </div>
+      )}
+
+      {!challenge && !solution && !result && (
+        <p class="text-brand-text/80 leading-relaxed text-base reveal-up" style="transition-delay: 0.2s">
+          {description}
+        </p>
+      )}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 reveal-up" style="transition-delay: 0.44s">
+      <a
+        href={`/categories/${category}/${id}`}
+        class="inline-flex items-center gap-2 text-brand-accent font-semibold text-sm tracking-wide group"
+      >
+        View Full Project
+        <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+  </div>
+</div>

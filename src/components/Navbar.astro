@@ -1,0 +1,66 @@
+---
+// src/components/Navbar.astro
+---
+<header class="sticky top-0 z-50 bg-brand-bg border-b border-brand-divider">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 lg:p-6">
+    <a href="/" class="group focus:outline-none py-1" aria-label="Grace Interior Designs Home">
+      <span class="font-bodoni italic font-medium text-2xl sm:text-3xl lg:text-[1.85rem] text-brand-primary group-hover:text-brand-accent transition-colors duration-300 tracking-[0.02em] whitespace-nowrap">
+        Grace Interior Designs
+      </span>
+    </a>
+    <div class="hidden md:flex space-x-6">
+      <a href="/" class="nav-link text-brand-text hover:text-brand-accent transition font-medium text-sm tracking-wide" data-active="/">Home</a>
+      <a href="/gallery" class="nav-link text-brand-text hover:text-brand-accent transition font-medium text-sm tracking-wide" data-active="/gallery">Portfolio</a>
+      <a href="/categories" class="nav-link text-brand-text hover:text-brand-accent transition font-medium text-sm tracking-wide" data-active="/categories">Categories</a>
+      <a href="/about" class="nav-link text-brand-text hover:text-brand-accent transition font-medium text-sm tracking-wide" data-active="/about">About</a>
+      <a href="/contact" class="nav-link text-brand-text hover:text-brand-accent transition font-medium text-sm tracking-wide" data-active="/contact">Contact</a>
+    </div>
+    <!-- Hamburger -->
+    <button id="menuBtn" class="md:hidden text-brand-primary focus:outline-none" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Fullscreen Overlay -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-brand-bg/98 hidden flex-col items-center justify-center space-y-8 text-2xl font-display">
+    <a href="/" class="nav-link text-brand-primary hover:text-brand-accent transition font-semibold" data-active="/">Home</a>
+    <a href="/gallery" class="nav-link text-brand-primary hover:text-brand-accent transition font-semibold" data-active="/gallery">Portfolio</a>
+    <a href="/categories" class="nav-link text-brand-primary hover:text-brand-accent transition font-semibold" data-active="/categories">Categories</a>
+    <a href="/about" class="nav-link text-brand-primary hover:text-brand-accent transition font-semibold" data-active="/about">About</a>
+    <a href="/contact" class="nav-link text-brand-primary hover:text-brand-accent transition font-semibold" data-active="/contact">Contact</a>
+    <button id="closeMenu" aria-label="Close menu" class="mt-8 text-brand-primary p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.remove('hidden');
+      mobileMenu?.classList.add('flex');
+    });
+
+    closeBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      mobileMenu?.classList.remove('flex');
+    });
+
+    // Highlight active link based on current path
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const href = link.getAttribute('data-active');
+      if (href === currentPath || (href !== '/' && currentPath.startsWith(href))) {
+        link.classList.add('underline', 'underline-offset-8', 'decoration-2', 'decoration-[#E8A020]', 'text-brand-accent');
+      }
+    });
+  });
+</script>

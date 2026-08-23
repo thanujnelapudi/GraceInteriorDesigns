@@ -1,0 +1,31 @@
+---
+// src/components/CategoryCard.astro
+interface Props {
+  slug: string;
+  name: string;
+  bgImage: string;
+}
+
+const { slug, name, bgImage } = Astro.props;
+---
+<a
+  href={`/categories/${slug}`}
+  class="group relative block aspect-[4/3] rounded-lg overflow-hidden border border-brand-divider hover:border-brand-accent transition-all duration-300 shadow-md hover:shadow-xl"
+>
+  <!-- Background Image with zoom -->
+  <img
+    src={bgImage}
+    alt={name}
+    loading="lazy"
+    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+  />
+  <!-- Dark Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/90 via-brand-primary/40 to-transparent"></div>
+  <!-- Content -->
+  <div class="absolute bottom-0 left-0 right-0 p-6">
+    <span class="category-label text-brand-accent mb-1 block">Category</span>
+    <h3 class="font-display text-2xl text-white font-semibold group-hover:text-brand-accent transition-colors">
+      {name}
+    </h3>
+  </div>
+</a>

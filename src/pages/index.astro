@@ -1,17 +1,491 @@
 ---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import CaseStudy from '../components/CaseStudy.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../utils/categories';
 
+const allWorks = await getCollection('works');
+// Primary featured work — for the case study editorial spread
+const primaryWork = allWorks.find(w => w.data.id === 'royal-heritage-mural') || allWorks.find(w => w.data.featured);
+// Gallery works — 3 different featured/notable works for the transformation gallery
+const galleryWorks = allWorks.filter(w => w.data.id !== primaryWork?.data.id).slice(0, 3);
+const categoriesList = Object.values(CATEGORIES);
+
+// Curated editorial images for sections
+const heroImage = "/HERO_IMG.jpeg";
+const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Grace Interior Designs — Wall Art & Painting Studio | Hanumakonda, Warangal & Hyderabad"
+  description="Custom wall murals, floral arts, school & educational art, and fine wall paintings crafted for homes, schools, and offices in Hanumakonda, Warangal, and Hyderabad, India."
+>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1 · HERO — Cinematic full-screen
+  ═══════════════════════════════════════════════ -->
+  <section id="hero" class="relative h-screen min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden">
+    <!-- Background image with Ken Burns -->
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        id="heroBg"
+        src={heroImage}
+        alt="Luxury interior wall art"
+        class="ken-burns w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <!-- Layered overlay: dark bottom for text legibility -->
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/60 via-brand-primary/40 to-brand-primary/80"></div>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6">
+      <p id="heroEyebrow" class="eyebrow text-brand-accent mb-6">Premier Wall Art Studio in Hanumakonda, Warangal & Hyderabad</p>
+      <h1 id="heroHeadline" class="font-display text-white leading-[1.05]">
+        <span class="word block text-5xl sm:text-7xl md:text-8xl font-bold">Spaces</span>
+        <span class="word block text-5xl sm:text-7xl md:text-8xl font-bold">That</span>
+        <span class="word block text-5xl sm:text-7xl md:text-8xl font-bold text-brand-accent">Inspire.</span>
+      </h1>
+      <p id="heroSub" class="mt-8 text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light">
+        Bespoke wall murals, floral arts, educational school themes, and hand-painted art for spaces across Hanumakonda, Warangal, and Hyderabad.
+      </p>
+      <div id="heroCta" class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/categories"
+          class="inline-block bg-brand-accent hover:bg-[#d4901a] text-brand-primary font-semibold px-10 py-4 text-base tracking-wide transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-0.5"
+        >
+          Explore Our Work
+        </a>
+        <a
+          href="/about"
+          class="inline-block border border-white/50 hover:border-brand-accent text-white hover:text-brand-accent px-10 py-4 text-base tracking-wide transition-all duration-300"
+        >
+          Our Story
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60">
+      <span class="eyebrow text-[10px]">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-white/60 to-transparent animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2 · PHILOSOPHY — Brand soul
+  ═══════════════════════════════════════════════ -->
+  <section class="relative py-24 sm:py-32 px-6 bg-brand-bg overflow-hidden">
+    <!-- Decorative gold lines -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 sm:w-32 h-px bg-brand-accent opacity-40"></div>
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-16 sm:w-32 h-px bg-brand-accent opacity-40"></div>
+
+    <div class="max-w-4xl mx-auto text-center reveal-up">
+      <span class="eyebrow text-brand-accent mb-6 block">Our Philosophy</span>
+      <!-- Gold ornament -->
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="h-px w-20 bg-brand-accent/40"></div>
+        <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+        <div class="h-px w-20 bg-brand-accent/40"></div>
+      </div>
+      <blockquote class="font-display text-2xl sm:text-3xl md:text-4xl italic text-brand-primary leading-relaxed font-medium">
+        "We don't just paint walls.<br class="hidden sm:block" />
+        We write stories on them."
+      </blockquote>
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <div class="h-px w-20 bg-brand-accent/40"></div>
+        <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+        <div class="h-px w-20 bg-brand-accent/40"></div>
+      </div>
+      <p class="mt-8 text-brand-text/70 text-base sm:text-lg font-light max-w-xl mx-auto leading-relaxed">
+        Every project we undertake begins with listening to you, to your space, to its light and its character. Then we paint the rest.
+      </p>
+    </div>
+
+    <!-- Stats row -->
+    <div class="max-w-3xl mx-auto mt-16 grid grid-cols-3 gap-4 sm:gap-8 reveal-up" style="transition-delay: 0.2s">
+      <div class="text-center border-r border-brand-divider/40 last:border-0">
+        <div class="font-display text-3xl sm:text-5xl font-bold text-brand-primary">2,000<span class="text-brand-accent">+</span></div>
+        <div class="eyebrow text-brand-text/60 mt-2">Projects Delivered</div>
+      </div>
+      <div class="text-center border-r border-brand-divider/40 last:border-0">
+        <div class="font-display text-3xl sm:text-5xl font-bold text-brand-primary">10<span class="text-brand-accent">+</span></div>
+        <div class="eyebrow text-brand-text/60 mt-2">Years of Artistry</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-3xl sm:text-5xl font-bold text-brand-primary">100<span class="text-brand-accent">%</span></div>
+        <div class="eyebrow text-brand-text/60 mt-2">Client Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3 · FEATURED CASE STUDY
+  ═══════════════════════════════════════════════ -->
+  {primaryWork && (
+    <section class="border-t border-brand-divider/30">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section label above -->
+        <div class="px-6 pt-16 pb-8 reveal-up">
+          <span class="eyebrow text-brand-accent">Case Study</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-primary mt-2">
+            Inside One<br class="hidden sm:block" /> Transformation
+          </h2>
+        </div>
+        <CaseStudy
+          id={primaryWork.data.id}
+          title={primaryWork.data.title}
+          category={primaryWork.data.category}
+          location={primaryWork.data.location}
+          challenge={primaryWork.data.challenge}
+          solution={primaryWork.data.solution}
+          result={primaryWork.data.result}
+          images={primaryWork.data.images}
+          description={primaryWork.data.description}
+        />
+      </div>
+    </section>
+  )}
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4 · CATEGORY EDITORIAL SHOWCASE (4 Core Disciplines)
+  ═══════════════════════════════════════════════ -->
+  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-t border-brand-divider/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-14 reveal-up">
+        <span class="eyebrow text-brand-accent mb-3 block">What We Create</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-primary">
+          Four Disciplines.<br class="hidden sm:block" />
+          <span class="italic font-normal text-brand-accent">One Studio.</span>
+        </h2>
+      </div>
+
+      <!-- 4 Categories Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categoriesList.map((cat) => (
+          <a
+            href={`/categories/${cat.slug}`}
+            class="group relative overflow-hidden block min-h-[380px] sm:min-h-[440px] shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <img
+              src={cat.bgImage}
+              alt={cat.name}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0"
+            />
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/40 to-transparent transition-opacity duration-300 group-hover:from-brand-primary/85"></div>
+            <!-- Gold left border on hover -->
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
+            
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-7 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="eyebrow text-brand-accent/90 block mb-2 text-xs">Category</span>
+              <h3 class="font-display text-2xl text-white font-semibold group-hover:text-brand-accent transition-colors duration-200">
+                {cat.name}
+              </h3>
+              <p class="text-white/75 text-sm mt-3 line-clamp-3 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                {cat.description}
+              </p>
+              <div class="mt-4 flex items-center gap-1.5 text-brand-accent text-xs font-semibold uppercase tracking-wider">
+                <span>Explore Works</span>
+                <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- View all link -->
+      <div class="text-center mt-12 reveal-up">
+        <a href="/categories" class="inline-flex items-center gap-2 border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300">
+          View All Categories
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5 · SIGNATURE MOMENT
+  ═══════════════════════════════════════════════ -->
+  <section id="signature" class="relative min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Dark interior background -->
+    <div class="absolute inset-0">
+      <img
+        src={signatureImage}
+        alt="Luxury interior"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-brand-primary/80"></div>
+    </div>
+
+    <!-- Oversized typography -->
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div id="signatureText" class="reveal-up">
+        <p class="signature-text text-white leading-none">
+          Every Wall
+        </p>
+        <p class="signature-text leading-none">
+          <em class="not-italic text-brand-accent">Has A Story.</em>
+        </p>
+      </div>
+      <p class="mt-10 text-white/60 text-base sm:text-lg font-light max-w-md mx-auto reveal-up" style="transition-delay: 0.3s">
+        Let us help you tell yours — one brushstroke at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 6 · HOW WE WORK — Premium process
+  ═══════════════════════════════════════════════ -->
+  <section class="py-24 sm:py-32 px-6 bg-white border-t border-brand-divider/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-20 reveal-up">
+        <span class="eyebrow text-brand-accent mb-3 block">Simple Process</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">
+          How We Work
+        </h2>
+        <div class="w-12 h-0.5 bg-brand-accent mx-auto mt-5"></div>
+      </div>
+
+      <!-- Timeline steps -->
+      <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
+        <!-- Connecting line (desktop only) -->
+        <div class="hidden md:block absolute top-8 left-[16.67%] right-[16.67%] h-px bg-brand-divider/60 z-0"></div>
+        <!-- Gold progress line -->
+        <div class="hidden md:block absolute top-8 left-[16.67%] w-1/3 h-px bg-brand-accent z-0"></div>
+
+        {[
+          { num: '01', title: 'Consult', desc: 'We visit your space, listen to your vision, and understand light, texture, and your personality — before we touch a single brush.' },
+          { num: '02', title: 'Design', desc: 'Our artists craft a digital mockup and colour palette tailored precisely to your walls. You approve every detail before we begin.' },
+          { num: '03', title: 'Execute', desc: 'Our experienced artists bring the approved design to life on your walls using premium non-toxic, long-lasting paints — beautifully and on time.' },
+        ].map(step => (
+          <div class="flex flex-col items-center text-center relative z-10 px-6">
+            <!-- Number circle -->
+            <div class="w-16 h-16 rounded-full bg-brand-primary text-brand-accent font-display text-xl font-bold flex items-center justify-center mb-8 shadow-lg border-2 border-brand-accent ring-4 ring-brand-bg">
+              {step.num}
+            </div>
+            <h3 class="font-display text-2xl sm:text-3xl font-semibold text-brand-primary mb-4">{step.title}</h3>
+            <p class="text-brand-text/70 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 7 · TRANSFORMATION GALLERY
+  ═══════════════════════════════════════════════ -->
+  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-t border-brand-divider/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4 reveal-up">
+        <div>
+          <span class="eyebrow text-brand-accent mb-2 block">Portfolio Highlights</span>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary leading-tight">
+            Recent<br />
+            <span class="italic font-normal">Transformations</span>
+          </h2>
+        </div>
+        <a href="/gallery" class="text-brand-accent font-semibold text-sm tracking-wide hover:underline flex items-center gap-1 shrink-0 group">
+          View Full Portfolio
+          <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+
+      <!-- Editorial gallery mosaic -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {galleryWorks.map((w, i) => (
+          <a
+            href={`/categories/${w.data.category}`}
+            class={`group relative overflow-hidden block ${i === 0 ? 'sm:row-span-2' : ''}`}
+            style={i === 0 ? 'height: 520px;' : 'height: 250px;'}
+          >
+            <img
+              src={w.data.images[0]}
+              alt={w.data.title}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style="display: block;"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/85 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+              <span class="eyebrow text-brand-accent mb-1 block">{w.data.category.replace(/-/g, ' ')}</span>
+              <h3 class="font-display text-lg sm:text-xl text-white font-semibold">{w.data.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 8 · CLIENT STORIES — Premium testimonials
+  ═══════════════════════════════════════════════ -->
+  <section class="py-24 sm:py-32 px-6 bg-white border-t border-brand-divider/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal-up">
+        <span class="eyebrow text-brand-accent mb-3 block">Client Stories</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">What They Say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            quote: "Grace Interior Designs created a stunning 14ft floral wall art in our villa living area. Everyone who visits is spellbound — it's become the soul of our home.",
+            name: "Priya & Vikram Reddy",
+            location: "Hanumakonda",
+            service: "Floral Arts"
+          },
+          {
+            quote: "The grand outdoor elephant mural on our villa exterior is a true masterpiece. Incredible relief sculpting and durable weather-proof painting!",
+            name: "Anand Rao",
+            location: "Warangal",
+            service: "Wall Murals"
+          },
+          {
+            quote: "Our preschool campus walls were turned into a colorful wonderland of animals, alphabet trails, and space maps. Kids and parents love it!",
+            name: "Dr. Sunitha Reddy",
+            location: "Hyderabad",
+            service: "School & Educational Art"
+          }
+        ].map(t => (
+          <div class="bg-brand-bg p-8 sm:p-10 relative group hover:-translate-y-1 transition-transform duration-300">
+            <!-- Large quote mark -->
+            <div class="font-display text-7xl sm:text-8xl text-brand-accent/20 leading-none absolute top-4 left-6 select-none pointer-events-none">&ldquo;</div>
+            <!-- Gold left accent bar -->
+            <div class="absolute left-0 top-8 bottom-8 w-0.5 bg-brand-accent"></div>
+            <div class="relative pt-6">
+              <p class="font-display italic text-brand-primary/90 text-base sm:text-lg leading-relaxed mb-8">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-px bg-brand-accent"></div>
+                <div>
+                  <div class="font-semibold text-brand-primary text-sm">{t.name}</div>
+                  <div class="text-xs text-brand-accent uppercase tracking-wider mt-0.5">{t.location} &bull; {t.service}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 9 · CTA — Fullscreen closer
+  ═══════════════════════════════════════════════ -->
+  <section class="relative py-28 sm:py-40 px-6 bg-brand-primary text-white text-center overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="eyebrow text-brand-accent mb-5 block reveal-up">Start Your Project</span>
+      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4 reveal-up" style="transition-delay: 0.1s">
+        Ready to Transform<br />
+        <span class="text-brand-accent italic">Your Space?</span>
+      </h2>
+      <p class="text-white/70 text-base sm:text-xl font-light mb-12 max-w-xl mx-auto reveal-up" style="transition-delay: 0.2s">
+        Let's discuss your wall dimensions, aesthetic vision, and create a custom handcrafted artwork.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-up" style="transition-delay: 0.3s">
+        <a
+          href="https://wa.me/919999999999?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+discuss+a+wall+art+project."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="glow-pulse inline-flex items-center gap-3 bg-brand-accent hover:bg-[#d4901a] text-brand-primary font-bold py-4 px-10 text-base shadow-xl hover:scale-105 transition-transform duration-200"
+        >
+          <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border border-white/50 hover:border-brand-accent text-white hover:text-brand-accent px-10 py-4 text-base tracking-wide transition-all duration-300"
+        >
+          Send an Enquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       GSAP ANIMATIONS — Hero stagger + Scroll reveals
+  ═══════════════════════════════════════════════ -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ── Hero timeline ──
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.to('#heroBg', {
+        scale: 1.08,
+        duration: 8,
+        ease: 'none',
+      }, 0)
+      .to('#heroEyebrow', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+      }, 0.2)
+      .to('#heroHeadline .word', {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.15,
+      }, 0.4)
+      .to('#heroSub', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+      }, 0.8)
+      .to('#heroCta', {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+      }, 1.0);
+
+      // ── ScrollTrigger for reveal-up elements ──
+      gsap.utils.toArray('.reveal-up').forEach((elem) => {
+        gsap.fromTo(elem,
+          { opacity: 0, y: 36 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: elem,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            }
+          }
+        );
+      });
+
+      // ── Signature text reveal ──
+      if (document.getElementById('signatureText')) {
+        gsap.fromTo('#signatureText .signature-text',
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#signature',
+              start: 'top 75%',
+              toggleActions: 'play none none none',
+            }
+          }
+        );
+      }
+    });
+  </script>
+
+</Layout>

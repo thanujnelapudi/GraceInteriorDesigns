@@ -1,0 +1,53 @@
+---
+// src/components/WorkCard.astro
+import { CATEGORIES } from '../utils/categories';
+
+interface Props {
+  workData: any; // Full work data object from content collection
+  index: number; // For stagger animation
+}
+
+const { workData, index } = Astro.props;
+const { id, title, category, priceRange, timeRange, images, description, wallSize, surface, suitableSpace, materials, location } = workData.data;
+
+const categoryObj = CATEGORIES[category] || { name: category };
+const categoryName = categoryObj.name;
+const mainImage = images[0];
+
+// Determine a pseudo-random aspect ratio based on ID length or index for masonry feel
+const aspectRatios = ["aspect-[4/5]", "aspect-square", "aspect-[3/4]", "aspect-[4/5]", "aspect-[2/3]"];
+const aspectRatio = aspectRatios[index % aspectRatios.length];
+---
+<div
+  class="work-card group relative break-inside-avoid mb-10 cursor-pointer w-full overflow-hidden"
+  data-work-json={JSON.stringify(workData.data)}
+>
+  <div class={`relative w-full overflow-hidden bg-brand-divider/20 ${aspectRatio}`}>
+    <img
+      src={mainImage}
+      alt={title}
+      loading="lazy"
+      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)]"
+    />
+    <!-- Subtle gradient just at the bottom for text contrast if needed, or no overlay -->
+    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+    
+    <!-- Hover Text Reveal -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-brand-primary/20 backdrop-blur-[2px]">
+      <span class="text-white font-display text-lg tracking-widest uppercase font-semibold border-b border-white/50 pb-1">
+        Explore Design
+      </span>
+    </div>
+  </div>
+  
+  <div class="pt-5 pb-2">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h3 class="font-display text-2xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors duration-300">
+          {title}
+        </h3>
+        <p class="text-xs uppercase tracking-widest text-brand-text/60 font-semibold mt-1.5">{categoryName}</p>
+      </div>
+    </div>
+  </div>
+</div>

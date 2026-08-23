@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,700;1,6..96,400;1,6..96,600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Prata&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Against';
+  src: url('/fonts/against-regular.woff2') format('woff2'),
+       url('/fonts/against-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-primary: #1A2A6C;
+  --color-brand-accent: #E8A020;
+  --color-brand-bg: #FAF8F5;
+  --color-brand-divider: #C8C0B4;
+  --color-brand-text: #2C2C2A;
+
+  --font-display: 'Playfair Display', serif;
+  --font-against: 'Against', sans-serif;
+  --font-italiana: 'Italiana', serif;
+  --font-bodoni: 'Bodoni Moda', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-cinzel-dec: 'Cinzel Decorative', serif;
+  --font-prata: 'Prata', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.font-against {
+  font-family: 'Against', sans-serif;
+}
+
+.font-bodoni {
+  font-family: 'Bodoni Moda', serif;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-body);
+}
+
+/* Eyebrow label — small uppercase tracking label above headings */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Legacy alias */
+.category-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Signature section giant text */
+.signature-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* Reveal from bottom — always visible; .revealed kept for compat */
+.reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image reveal — smooth appearance */
+.img-reveal {
+  opacity: 1;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+/* Glow pulse for CTA button */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 160, 32, 0); }
+  50%       { box-shadow: 0 0 32px 8px rgba(232, 160, 32, 0.35); }
+}
+.glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Ken Burns zoom for hero */
+@keyframes ken-burns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.08); }
+}
+.ken-burns {
+  animation: ken-burns 12s ease-out forwards;
+}
+
+/* Slow counter number animation */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
