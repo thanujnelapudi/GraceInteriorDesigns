@@ -1,24 +1,41 @@
 ---
 // src/pages/contact.astro
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="Contact Us — Grace Interior Designs" description="Begin your wall art transformation. Contact Grace Interior Designs for bespoke consultations across Hanumakonda, Warangal, and Hyderabad.">
-  
+
+<Layout
+  title="Contact Us — Grace Interior Designs"
+  description="Begin your wall art transformation. Contact Grace Interior Designs for bespoke consultations across Hanumakonda, Warangal, and Hyderabad."
+>
   <!-- ═══════════════════════════════════════════════
        1. HERO SECTION
   ═══════════════════════════════════════════════ -->
-  <section class="relative bg-brand-primary text-white pt-32 pb-24 sm:pt-40 sm:pb-32 px-6 overflow-hidden">
+  <section
+    class="relative bg-brand-primary text-white pt-32 pb-24 sm:pt-40 sm:pb-32 px-6 overflow-hidden"
+  >
     <!-- Subtle Background Texture -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 40px 40px;"></div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-start w-full">
+    <div
+      class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 40px 40px;"
+    >
+    </div>
+
+    <div
+      class="relative z-10 max-w-7xl mx-auto flex flex-col items-start w-full"
+    >
       <span class="eyebrow text-brand-accent mb-4 block">Reach Out</span>
       <h1 class="font-display text-white leading-none">
-        <span class="block text-5xl sm:text-7xl lg:text-8xl font-bold">Begin Your</span>
-        <span class="block text-5xl sm:text-7xl lg:text-8xl font-bold italic text-brand-accent">Transformation.</span>
+        <span class="block text-5xl sm:text-7xl lg:text-8xl font-bold"
+          >Begin Your</span
+        >
+        <span
+          class="block text-5xl sm:text-7xl lg:text-8xl font-bold italic text-brand-accent"
+          >Transformation.</span
+        >
       </h1>
       <p class="mt-6 text-white/70 text-base sm:text-xl font-light max-w-2xl">
-        We craft custom hand-painted wall art for homes, luxury villas, offices, and commercial spaces across Hanumakonda, Warangal, and Hyderabad.
+        We craft custom hand-painted wall art for homes, luxury villas, offices,
+        and commercial spaces across Hanumakonda, Warangal, and Hyderabad.
       </p>
     </div>
   </section>
@@ -28,101 +45,173 @@ import Layout from '../layouts/Layout.astro';
   ═══════════════════════════════════════════════ -->
   <section class="py-24 px-4 sm:px-6 bg-brand-bg">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-      
       <!-- Left Column: Direct Reach Out Cards -->
       <div class="lg:col-span-5 space-y-8">
         <div>
-          <span class="eyebrow text-brand-accent mb-3 block">Direct Channels</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-primary">How Would You Like to Connect?</h2>
+          <span class="eyebrow text-brand-accent mb-3 block"
+            >Direct Channels</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-brand-primary"
+          >
+            How Would You Like to Connect?
+          </h2>
         </div>
 
         <!-- WhatsApp Card -->
-        <a 
-          href="https://wa.me/919999999999?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+discuss+a+new+project."
+        <a
+          href="https://wa.me/919701483107?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+discuss+a+new+project."
           target="_blank"
           rel="noopener noreferrer"
           class="group block p-8 bg-white border border-brand-divider/60 hover:border-brand-accent shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
         >
-          <div class="absolute top-0 right-0 w-24 h-24 bg-[#25D366]/5 rounded-bl-full pointer-events-none"></div>
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-[#25D366]/5 rounded-bl-full pointer-events-none"
+          >
+          </div>
           <div class="flex items-start gap-5">
-            <div class="w-12 h-12 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-12 h-12 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
+            >
               <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"/>
+                <path
+                  d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"
+                ></path>
               </svg>
             </div>
             <div>
-              <span class="text-xs uppercase tracking-widest text-[#25D366] font-bold block mb-1">Fastest Response</span>
-              <h3 class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors">Chat on WhatsApp</h3>
-              <p class="text-brand-text/70 text-sm mt-1">+91 99999 99999</p>
+              <span
+                class="text-xs uppercase tracking-widest text-[#25D366] font-bold block mb-1"
+                >Fastest Response</span
+              >
+              <h3
+                class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors"
+              >
+                Chat on WhatsApp
+              </h3>
+              <p class="text-brand-text/70 text-sm mt-1">+91 9701483107</p>
             </div>
           </div>
         </a>
 
         <!-- Phone Card -->
-        <a 
-          href="tel:+919999999999"
+        <a
+          href="tel:+91 9701483107"
           class="group block p-8 bg-white border border-brand-divider/60 hover:border-brand-accent shadow-sm hover:shadow-xl transition-all duration-300"
         >
           <div class="flex items-start gap-5">
-            <div class="w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            <div
+              class="w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
               </svg>
             </div>
             <div>
-              <span class="text-xs uppercase tracking-widest text-brand-primary/60 font-semibold block mb-1">Direct Call</span>
-              <h3 class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors">+91 99999 99999</h3>
-              <p class="text-brand-text/70 text-sm mt-1">Mon &ndash; Sat, 9:00 AM &ndash; 7:00 PM IST</p>
+              <span
+                class="text-xs uppercase tracking-widest text-brand-primary/60 font-semibold block mb-1"
+                >Direct Call</span
+              >
+              <h3
+                class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors"
+              >
+                +91 9701483107
+              </h3>
+              <p class="text-brand-text/70 text-sm mt-1">
+                Mon &ndash; Sat, 9:00 AM &ndash; 10:00 PM IST
+              </p>
             </div>
           </div>
         </a>
 
         <!-- Email Card -->
-        <a 
-          href="mailto:info@graceinteriordesigns.com"
+        <a
+          href="mailto:graceinteriors107@gmail.com"
           class="group block p-8 bg-white border border-brand-divider/60 hover:border-brand-accent shadow-sm hover:shadow-xl transition-all duration-300"
         >
           <div class="flex items-start gap-5">
-            <div class="w-12 h-12 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <div
+              class="w-12 h-12 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
               </svg>
             </div>
             <div>
-              <span class="text-xs uppercase tracking-widest text-brand-accent font-semibold block mb-1">Official Inbox</span>
-              <h3 class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors">info@graceinteriordesigns.com</h3>
-              <p class="text-brand-text/70 text-sm mt-1">Send architectural plans or design briefs</p>
+              <span
+                class="text-xs uppercase tracking-widest text-brand-accent font-semibold block mb-1"
+                >Official Inbox</span
+              >
+              <h3
+                class="font-display text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors"
+              >
+                graceinteriors107@gmail.com
+              </h3>
+              <p class="text-brand-text/70 text-sm mt-1">
+                Send architectural plans or design briefs
+              </p>
             </div>
           </div>
         </a>
       </div>
 
       <!-- Right Column: Interactive Consultation Form -->
-      <div class="lg:col-span-7 bg-white p-8 sm:p-12 border border-brand-divider/60 shadow-xl">
-        <span class="eyebrow text-brand-accent mb-2 block">Bespoke Inquiry</span>
-        <h2 class="font-display text-3xl font-bold text-brand-primary mb-8">Schedule a Consultation</h2>
+      <div
+        class="lg:col-span-7 bg-white p-8 sm:p-12 border border-brand-divider/60 shadow-xl"
+      >
+        <span class="eyebrow text-brand-accent mb-2 block">Bespoke Inquiry</span
+        >
+        <h2 class="font-display text-3xl font-bold text-brand-primary mb-8">
+          Schedule a Consultation
+        </h2>
 
         <form id="consultationForm" class="space-y-6">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Full Name -->
             <div>
-              <label class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2" for="name">Your Name *</label>
-              <input 
-                type="text" 
-                id="name" 
-                required 
-                placeholder="e.g. Ananya Rao" 
+              <label
+                class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2"
+                for="name">Your Name *</label
+              >
+              <input
+                type="text"
+                id="name"
+                required
+                placeholder="e.g. Ananya Rao"
                 class="w-full bg-brand-bg border border-brand-divider px-4 py-3 text-sm text-brand-text focus:outline-none focus:border-brand-primary transition"
               />
             </div>
             <!-- Phone / WhatsApp -->
             <div>
-              <label class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2" for="phone">Phone / WhatsApp *</label>
-              <input 
-                type="tel" 
-                id="phone" 
-                required 
-                placeholder="+91 98765 43210" 
+              <label
+                class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2"
+                for="phone">Phone / WhatsApp *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                required
+                placeholder="+91 99999 99999"
                 class="w-full bg-brand-bg border border-brand-divider px-4 py-3 text-sm text-brand-text focus:outline-none focus:border-brand-primary transition"
               />
             </div>
@@ -131,9 +220,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Location Picker -->
             <div>
-              <label class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2" for="location">Project Location *</label>
-              <select 
-                id="location" 
+              <label
+                class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2"
+                for="location">Project Location *</label
+              >
+              <select
+                id="location"
                 required
                 class="w-full bg-brand-bg border border-brand-divider px-4 py-3 text-sm text-brand-text focus:outline-none focus:border-brand-primary transition"
               >
@@ -145,54 +237,75 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <!-- Category Interest -->
             <div>
-              <label class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2" for="category">Category Interest</label>
-              <select 
-                id="category" 
+              <label
+                class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2"
+                for="category">Category Interest</label
+              >
+              <select
+                id="category"
                 class="w-full bg-brand-bg border border-brand-divider px-4 py-3 text-sm text-brand-text focus:outline-none focus:border-brand-primary transition"
               >
                 <option value="Wall Murals">Wall Murals</option>
                 <option value="Floral Arts">Floral Arts</option>
-                <option value="School & Educational Art">School & Educational Art</option>
-                <option value="Wall Art & Paintings">Wall Art & Paintings</option>
+                <option value="School & Educational Art"
+                  >School & Educational Art</option
+                >
+                <option value="Wall Art & Paintings"
+                  >Wall Art & Paintings</option
+                >
               </select>
             </div>
           </div>
 
           <!-- Project Message -->
           <div>
-            <label class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2" for="message">Project Details / Wall Dimensions</label>
-            <textarea 
-              id="message" 
-              rows="4" 
-              placeholder="Tell us about your space, lighting, preferred colors, or wall size..." 
+            <label
+              class="block text-xs uppercase tracking-widest font-semibold text-brand-primary mb-2"
+              for="message">Project Details / Wall Dimensions</label
+            >
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Tell us about your space, lighting, preferred colors, or wall size..."
               class="w-full bg-brand-bg border border-brand-divider px-4 py-3 text-sm text-brand-text focus:outline-none focus:border-brand-primary transition"
             ></textarea>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             class="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-bold py-4 px-8 tracking-wide uppercase text-xs transition duration-300 cursor-pointer shadow-lg"
           >
             Submit Inquiry
           </button>
         </form>
 
-        <div id="formSuccess" class="hidden mt-6 p-4 bg-brand-primary/10 border border-brand-accent text-brand-primary text-sm text-center">
-          Thank you! Your inquiry has been prepared. Redirecting to WhatsApp for immediate confirmation...
+        <div
+          id="formSuccess"
+          class="hidden mt-6 p-4 bg-brand-primary/10 border border-brand-accent text-brand-primary text-sm text-center"
+        >
+          Thank you! Your inquiry has been prepared. Redirecting to WhatsApp for
+          immediate confirmation...
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
        3. FREQUENTLY ASKED QUESTIONS (Editorial Accordion)
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-white border-t border-brand-divider/30">
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-white border-t border-brand-divider/30"
+  >
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <span class="eyebrow text-brand-accent mb-3 block">Common Questions</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">Frequently Asked Questions</h2>
+        <span class="eyebrow text-brand-accent mb-3 block"
+          >Common Questions</span
+        >
+        <h2
+          class="font-display text-4xl sm:text-5xl font-bold text-brand-primary"
+        >
+          Frequently Asked Questions
+        </h2>
       </div>
 
       <div class="space-y-6">
@@ -200,24 +313,28 @@ import Layout from '../layouts/Layout.astro';
           [
             {
               q: "Do you conduct site visits before starting?",
-              a: "Yes! We offer on-site consultation across Hanumakonda, Warangal, and Hyderabad to inspect the wall texture, ambient lighting, and room dimensions."
+              a: "Yes! We offer on-site consultation across Hanumakonda, Warangal, and Hyderabad to inspect the wall texture, ambient lighting, and room dimensions.",
             },
             {
               q: "How long does a typical hand-painted mural take?",
-              a: "Most residential projects are completed within 3 to 5 working days, depending on intricate details and overall square footage."
+              a: "Most residential projects are completed within 3 to 5 working days, depending on intricate details and overall square footage.",
             },
             {
               q: "Are the paints non-toxic and odor-free?",
-              a: "We exclusively use zero-VOC, non-toxic acrylic paints and eco-friendly sealants safe for children and pets."
+              a: "We exclusively use zero-VOC, non-toxic acrylic paints and eco-friendly sealants safe for children and pets.",
             },
             {
               q: "Can artwork be customized to match existing interior furniture?",
-              a: "Every artwork is 100% bespoke. We tailor color palettes to match your furniture, curtains, and lighting fixtures."
-            }
+              a: "Every artwork is 100% bespoke. We tailor color palettes to match your furniture, curtains, and lighting fixtures.",
+            },
           ].map((faq) => (
             <div class="p-6 bg-brand-bg border border-brand-divider/50">
-              <h3 class="font-display text-xl font-bold text-brand-primary mb-2">{faq.q}</h3>
-              <p class="text-brand-text/75 font-light text-sm leading-relaxed">{faq.a}</p>
+              <h3 class="font-display text-xl font-bold text-brand-primary mb-2">
+                {faq.q}
+              </h3>
+              <p class="text-brand-text/75 font-light text-sm leading-relaxed">
+                {faq.a}
+              </p>
             </div>
           ))
         }
@@ -227,26 +344,26 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Form Script -->
   <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('consultationForm');
-      const success = document.getElementById('formSuccess');
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("consultationForm");
+      const success = document.getElementById("formSuccess");
 
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener("submit", (e) => {
           e.preventDefault();
-          const name = document.getElementById('name').value;
-          const phone = document.getElementById('phone').value;
-          const location = document.getElementById('location').value;
-          const category = document.getElementById('category').value;
-          const message = document.getElementById('message').value;
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phone").value;
+          const location = document.getElementById("location").value;
+          const category = document.getElementById("category").value;
+          const message = document.getElementById("message").value;
 
           const text = `Hi Grace Interior Designs, I'd like to schedule a consultation.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${location}\n*Category:* ${category}\n*Details:* ${message}`;
-          const waUrl = `https://wa.me/919999999999?text=${encodeURIComponent(text)}`;
+          const waUrl = `https://wa.me/919701483107?text=${encodeURIComponent(text)}`;
 
-          if (success) success.classList.remove('hidden');
+          if (success) success.classList.remove("hidden");
 
           setTimeout(() => {
-            window.open(waUrl, '_blank');
+            window.open(waUrl, "_blank");
           }, 1000);
         });
       }

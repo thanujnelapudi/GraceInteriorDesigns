@@ -1,13 +1,18 @@
 ---
 // src/pages/about.astro
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="About Us — Grace Interior Designs" description="Discover the story behind Grace Interior Designs. A premium fine art and wall mural studio transforming luxury spaces in Hanumakonda, Warangal, and Hyderabad.">
-  
+
+<Layout
+  title="About Us — Grace Interior Designs"
+  description="Discover the story behind Grace Interior Designs. A premium fine art and wall mural studio transforming luxury spaces in Hanumakonda, Warangal, and Hyderabad."
+>
   <!-- ═══════════════════════════════════════════════
        1. HERO SECTION
   ═══════════════════════════════════════════════ -->
-  <section class="relative h-[85vh] min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden">
+  <section
+    class="relative h-[85vh] min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden"
+  >
     <div class="absolute inset-0">
       <img
         src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=85"
@@ -20,20 +25,38 @@ import Layout from '../layouts/Layout.astro';
       <div class="absolute inset-0 bg-brand-primary/85"></div>
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center">
-      <span class="eyebrow text-brand-accent mb-6 block uppercase tracking-widest text-xs font-semibold">Our Studio</span>
-      <h1 class="font-display text-white text-5xl sm:text-7xl lg:text-8xl font-bold leading-tight mb-8">
+    <div
+      class="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center"
+    >
+      <span
+        class="eyebrow text-brand-accent mb-6 block uppercase tracking-widest text-xs font-semibold"
+        >Our Studio</span
+      >
+      <h1
+        class="font-display text-white text-5xl sm:text-7xl lg:text-8xl font-bold leading-tight mb-8"
+      >
         Creating Spaces That<br />
         <span class="italic text-brand-accent font-light">Tell Stories.</span>
       </h1>
-      <p class="text-white/75 text-lg sm:text-xl font-light max-w-3xl mx-auto leading-relaxed">
-        Grace Interior Designs transforms ordinary walls into handcrafted artistic experiences across homes, villas, cafés, offices, restaurants, and commercial spaces.
+      <p
+        class="text-white/75 text-lg sm:text-xl font-light max-w-3xl mx-auto leading-relaxed"
+      >
+        Grace Interior Designs transforms ordinary walls into handcrafted
+        artistic experiences across homes, villas, cafés, offices, restaurants,
+        and commercial spaces.
       </p>
-      
+
       <!-- Scroll indicator -->
-      <div class="mt-20 flex flex-col items-center justify-center gap-2 text-white/50">
-        <span class="text-[10px] uppercase tracking-widest">Scroll to explore</span>
-        <div class="w-px h-16 bg-gradient-to-b from-brand-accent to-transparent animate-pulse"></div>
+      <div
+        class="mt-20 flex flex-col items-center justify-center gap-2 text-white/50"
+      >
+        <span class="text-[10px] uppercase tracking-widest"
+          >Scroll to explore</span
+        >
+        <div
+          class="w-px h-16 bg-gradient-to-b from-brand-accent to-transparent animate-pulse"
+        >
+        </div>
       </div>
     </div>
   </section>
@@ -41,12 +64,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- ═══════════════════════════════════════════════
        2. OUR STORY (Split Layout)
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-b border-brand-divider/30">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-      
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-b border-brand-divider/30"
+  >
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
+    >
       <!-- Left: Premium Image -->
       <div class="relative group">
-        <div class="absolute -inset-4 bg-brand-primary/5 transform -skew-y-2 group-hover:skew-y-0 transition-transform duration-700"></div>
+        <div
+          class="absolute -inset-4 bg-brand-primary/5 transform -skew-y-2 group-hover:skew-y-0 transition-transform duration-700"
+        >
+        </div>
         <div class="relative aspect-[4/5] overflow-hidden rounded-sm">
           <img
             src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80"
@@ -55,30 +84,47 @@ import Layout from '../layouts/Layout.astro';
             loading="lazy"
           />
           <!-- Decorative gold line -->
-          <div class="absolute left-0 top-10 bottom-10 w-0.5 bg-brand-accent/60"></div>
+          <div
+            class="absolute left-0 top-10 bottom-10 w-0.5 bg-brand-accent/60"
+          >
+          </div>
         </div>
       </div>
 
       <!-- Right: Story -->
       <div class="space-y-8">
         <span class="eyebrow text-brand-accent block">The Beginning</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary leading-tight">
-          Born from a passion for <span class="italic font-light">expressive architecture.</span>
+        <h2
+          class="font-display text-4xl sm:text-5xl font-bold text-brand-primary leading-tight"
+        >
+          Born from a passion for <span class="italic font-light"
+            >expressive architecture.</span
+          >
         </h2>
-        
-        <div class="space-y-6 text-brand-text/80 text-lg font-light leading-relaxed">
+
+        <div
+          class="space-y-6 text-brand-text/80 text-lg font-light leading-relaxed"
+        >
           <p>
-            Founded in the historic twin cities of Hanumakonda and Warangal and expanding into the luxury corridors of Hyderabad, Grace Interior Designs was born out of a simple belief: walls should not be silent. 
+            Founded in the historic twin cities of Hanumakonda and Warangal and
+            expanding into the luxury corridors of Hyderabad, Grace Interior
+            Designs was born out of a simple belief: walls should not be silent.
           </p>
           <p>
-            We realized that while modern architecture provides beautiful structural canvases, it is the handcrafted brushstrokes, the intricate textures, and the bespoke artworks that breathe a soul into a room. Handcrafted artwork matters because it ensures your space is entirely exclusive to you—impossible to replicate and designed specifically for your lighting, dimensions, and lifestyle.
+            We realized that while modern architecture provides beautiful
+            structural canvases, it is the handcrafted brushstrokes, the
+            intricate textures, and the bespoke artworks that breathe a soul
+            into a room. Handcrafted artwork matters because it ensures your
+            space is entirely exclusive to you—impossible to replicate and
+            designed specifically for your lighting, dimensions, and lifestyle.
           </p>
           <p>
-            The philosophy behind every project is deeply emotional rather than corporate. We don't just paint walls; we translate your vision into a living masterpiece.
+            The philosophy behind every project is deeply emotional rather than
+            corporate. We don't just paint walls; we translate your vision into
+            a living masterpiece.
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -87,53 +133,93 @@ import Layout from '../layouts/Layout.astro';
   ═══════════════════════════════════════════════ -->
   <section class="py-24 relative overflow-hidden bg-brand-primary text-white">
     <!-- Subtle Background Texture -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"></div>
-    
+    <div
+      class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"
+    >
+    </div>
+
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center divide-x divide-brand-accent/20">
-        
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center divide-x divide-brand-accent/20"
+      >
         <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
-            5<span class="text-3xl">+</span>
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
+            10<span class="text-3xl">+</span>
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Years<br/>Experience</div>
-        </div>
-        
-        <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
-            200<span class="text-3xl">+</span>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Years<br />Experience
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Projects<br/>Completed</div>
         </div>
-        
+
         <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
-            4
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
+            2,000<span class="text-3xl">+</span>
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Art<br/>Categories</div>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Projects<br />Completed
+          </div>
         </div>
-        
+
         <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
+            6
+          </div>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Art<br />Categories
+          </div>
+        </div>
+
+        <div class="px-2">
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
             100<span class="text-3xl">%</span>
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Custom<br/>Designs</div>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Custom<br />Designs
+          </div>
         </div>
 
         <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
             <span class="text-brand-accent/50 text-4xl">★</span>
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Premium<br/>Materials</div>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Premium<br />Materials
+          </div>
         </div>
 
         <div class="px-2">
-          <div class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2">
+          <div
+            class="font-display text-5xl sm:text-6xl font-bold text-brand-accent mb-2"
+          >
             5.0
           </div>
-          <div class="text-xs uppercase tracking-widest font-semibold text-white/70">Client<br/>Satisfaction</div>
+          <div
+            class="text-xs uppercase tracking-widest font-semibold text-white/70"
+          >
+            Client<br />Satisfaction
+          </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -144,72 +230,156 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-24 sm:py-32 px-4 sm:px-6 bg-white">
     <div class="max-w-7xl mx-auto text-center mb-20">
       <span class="eyebrow text-brand-accent mb-4 block">Core Beliefs</span>
-      <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">Our Philosophy</h2>
+      <h2
+        class="font-display text-4xl sm:text-5xl font-bold text-brand-primary"
+      >
+        Our Philosophy
+      </h2>
     </div>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-      
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20"
+    >
       <!-- Philosophy 1 -->
       <div class="flex flex-col items-center text-center group">
-        <div class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+        <div
+          class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+            alt="Architecture"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"
+          >
+          </div>
         </div>
-        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">Every wall deserves a story.</h3>
-        <div class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"></div>
+        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">
+          Every wall deserves a story.
+        </h3>
+        <div
+          class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"
+        >
+        </div>
       </div>
 
       <!-- Philosophy 2 -->
       <div class="flex flex-col items-center text-center group">
-        <div class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]">
-          <img src="https://images.unsplash.com/photo-1549492423-400259a2e574?w=600&q=80" alt="Handcrafted" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+        <div
+          class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1549492423-400259a2e574?w=600&q=80"
+            alt="Handcrafted"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"
+          >
+          </div>
         </div>
-        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">Every design is handcrafted.</h3>
-        <div class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"></div>
+        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">
+          Every design is handcrafted.
+        </h3>
+        <div
+          class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"
+        >
+        </div>
       </div>
 
       <!-- Philosophy 3 -->
       <div class="flex flex-col items-center text-center group">
-        <div class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]">
-          <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=600&q=80" alt="Unique project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"></div>
+        <div
+          class="mb-8 overflow-hidden rounded-sm relative aspect-square w-full max-w-[280px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=600&q=80"
+            alt="Unique project"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-brand-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"
+          >
+          </div>
         </div>
-        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">Every project is unique.</h3>
-        <div class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"></div>
+        <h3 class="font-display text-2xl font-bold text-brand-primary mb-3">
+          Every project is unique.
+        </h3>
+        <div
+          class="w-8 h-px bg-brand-accent mb-4 transition-all duration-300 group-hover:w-16"
+        >
+        </div>
       </div>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
        5. HOW WE WORK (Step-by-step Flow)
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-t border-brand-divider/30">
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg border-t border-brand-divider/30"
+  >
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
         <span class="eyebrow text-brand-accent mb-4 block">The Process</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">How We Work</h2>
+        <h2
+          class="font-display text-4xl sm:text-5xl font-bold text-brand-primary"
+        >
+          How We Work
+        </h2>
       </div>
 
-      <div class="flex flex-col lg:flex-row items-start justify-between relative">
+      <div
+        class="flex flex-col lg:flex-row items-start justify-between relative"
+      >
         <!-- Connecting Line -->
-        <div class="hidden lg:block absolute top-6 left-0 right-0 h-px bg-brand-divider/50 z-0"></div>
+        <div
+          class="hidden lg:block absolute top-6 left-0 right-0 h-px bg-brand-divider/50 z-0"
+        >
+        </div>
 
         {
           [
-            { step: '01', title: 'Consult', desc: 'Understanding your space, lighting, and vision.' },
-            { step: '02', title: 'Concept Design', desc: 'Presenting sketches and color palettes for approval.' },
-            { step: '03', title: 'Artwork Creation', desc: 'Our master artists begin the handcrafted process.' },
-            { step: '04', title: 'Installation', desc: 'Professional, clean, and seamless on-site execution.' },
-            { step: '05', title: 'Final Reveal', desc: 'Handover of your newly transformed luxury space.' },
+            {
+              step: "01",
+              title: "Consult",
+              desc: "Understanding your space, lighting, and vision.",
+            },
+            {
+              step: "02",
+              title: "Concept Design",
+              desc: "Presenting sketches and color palettes for approval.",
+            },
+            {
+              step: "03",
+              title: "Artwork Creation",
+              desc: "Our master artists begin the handcrafted process.",
+            },
+            {
+              step: "04",
+              title: "Installation",
+              desc: "Professional, clean, and seamless on-site execution.",
+            },
+            {
+              step: "05",
+              title: "Final Reveal",
+              desc: "Handover of your newly transformed luxury space.",
+            },
           ].map((item, i) => (
             <div class="relative z-10 flex flex-col items-center text-center group w-full lg:w-1/5 mb-10 lg:mb-0 px-4">
               <div class="w-12 h-12 rounded-full bg-brand-bg border border-brand-accent flex items-center justify-center font-display text-brand-primary font-bold text-lg mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
                 {item.step}
               </div>
-              <h3 class="font-display text-xl font-bold text-brand-primary mb-2">{item.title}</h3>
-              <p class="text-sm text-brand-text/70 font-light max-w-[200px] mx-auto">{item.desc}</p>
+              <h3 class="font-display text-xl font-bold text-brand-primary mb-2">
+                {item.title}
+              </h3>
+              <p class="text-sm text-brand-text/70 font-light max-w-[200px] mx-auto">
+                {item.desc}
+              </p>
             </div>
           ))
         }
@@ -220,22 +390,50 @@ import Layout from '../layouts/Layout.astro';
   <!-- ═══════════════════════════════════════════════
        6. WHY CLIENTS CHOOSE GRACE (Premium Feature Cards)
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-white border-t border-brand-divider/20">
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-white border-t border-brand-divider/20"
+  >
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <span class="eyebrow text-brand-accent mb-4 block">The Grace Difference</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary">Why Clients Choose Us</h2>
+        <span class="eyebrow text-brand-accent mb-4 block"
+          >The Grace Difference</span
+        >
+        <h2
+          class="font-display text-4xl sm:text-5xl font-bold text-brand-primary"
+        >
+          Why Clients Choose Us
+        </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+      >
         {
           [
-            { title: 'Handcrafted Artwork', desc: 'No stencils or mass-produced prints. Every piece is 100% hand-painted by master artists.' },
-            { title: 'Luxury Finishes', desc: 'We utilize premium textures, real gold leaf detailing, and specialized rendering techniques.' },
-            { title: 'Long-Lasting Materials', desc: 'Using non-toxic, fade-resistant acrylics and moisture-resistant sealants for durability.' },
-            { title: 'On-Time Delivery', desc: 'Strict adherence to project timelines with minimal disruption to your home or business.' },
-            { title: 'Collaborative Design', desc: 'We work closely with architects and interior designers to match exact aesthetic goals.' },
-            { title: 'Personalized Consultation', desc: 'Tailored advice on wall sizes, lighting, and color theory specific to your environment.' }
+            {
+              title: "Handcrafted Artwork",
+              desc: "No stencils or mass-produced prints. Every piece is 100% hand-painted by master artists.",
+            },
+            {
+              title: "Luxury Finishes",
+              desc: "We utilize premium textures, real gold leaf detailing, and specialized rendering techniques.",
+            },
+            {
+              title: "Long-Lasting Materials",
+              desc: "Using non-toxic, fade-resistant acrylics and moisture-resistant sealants for durability.",
+            },
+            {
+              title: "On-Time Delivery",
+              desc: "Strict adherence to project timelines with minimal disruption to your home or business.",
+            },
+            {
+              title: "Collaborative Design",
+              desc: "We work closely with architects and interior designers to match exact aesthetic goals.",
+            },
+            {
+              title: "Personalized Consultation",
+              desc: "Tailored advice on wall sizes, lighting, and color theory specific to your environment.",
+            },
           ].map((feature) => (
             <div class="group relative pt-8 border-t border-brand-primary/10 hover:border-brand-accent transition-colors duration-500">
               <h3 class="font-display text-2xl font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors duration-300">
@@ -254,64 +452,115 @@ import Layout from '../layouts/Layout.astro';
   <!-- ═══════════════════════════════════════════════
        7. TESTIMONIALS (Editorial Style)
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-primary text-white overflow-hidden relative">
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 40px 40px;"></div>
-    
-    <div class="max-w-6xl mx-auto relative z-10 text-center mb-16">
-      <span class="eyebrow text-brand-accent mb-4 block">Client Praise</span>
-      <h2 class="font-display text-4xl sm:text-5xl font-bold">Voices of Elegance</h2>
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-primary text-white overflow-hidden relative"
+  >
+    <div
+      class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 40px 40px;"
+    >
     </div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 relative z-10">
-      
+    <div class="max-w-6xl mx-auto relative z-10 text-center mb-16">
+      <span class="eyebrow text-brand-accent mb-4 block">Client Praise</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold">
+        Voices of Elegance
+      </h2>
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 relative z-10"
+    >
       <!-- Testimonial 1 -->
       <div class="relative pl-10 border-l border-brand-accent/30">
-        <span class="absolute left-0 top-0 text-6xl text-brand-accent/40 font-display leading-none">"</span>
-        <p class="font-display text-2xl lg:text-3xl font-light italic leading-relaxed mb-8">
-          The attention to detail is simply unmatched. Grace Interior Designs completely transformed our Jubilee Hills villa with a bespoke floral mural that feels alive. A true luxury experience from consultation to final reveal.
+        <span
+          class="absolute left-0 top-0 text-6xl text-brand-accent/40 font-display leading-none"
+          >"</span
+        >
+        <p
+          class="font-display text-2xl lg:text-3xl font-light italic leading-relaxed mb-8"
+        >
+          The attention to detail is simply unmatched. Grace Interior Designs
+          completely transformed our Jubilee Hills villa with a bespoke floral
+          mural that feels alive. A true luxury experience from consultation to
+          final reveal.
         </p>
         <div>
-          <h4 class="font-bold text-brand-accent tracking-wide uppercase text-sm">Arjun Reddy</h4>
-          <span class="text-white/50 text-xs tracking-widest uppercase">Residential Client, Hyderabad</span>
+          <h4
+            class="font-bold text-brand-accent tracking-wide uppercase text-sm"
+          >
+            Anusha
+          </h4>
+          <span class="text-white/50 text-xs tracking-widest uppercase"
+            >Residential Client, Hyderabad</span
+          >
         </div>
       </div>
 
       <!-- Testimonial 2 -->
       <div class="relative pl-10 border-l border-brand-accent/30">
-        <span class="absolute left-0 top-0 text-6xl text-brand-accent/40 font-display leading-none">"</span>
-        <p class="font-display text-2xl lg:text-3xl font-light italic leading-relaxed mb-8">
-          We needed an expansive wall painting for our boutique hotel lobby. The craftsmanship and dedication shown by the artists exceeded our wildest expectations. It has become the centerpiece of our space.
+        <span
+          class="absolute left-0 top-0 text-6xl text-brand-accent/40 font-display leading-none"
+          >"</span
+        >
+        <p
+          class="font-display text-2xl lg:text-3xl font-light italic leading-relaxed mb-8"
+        >
+          We needed an expansive wall painting for our boutique hotel lobby. The
+          craftsmanship and dedication shown by the artists exceeded our wildest
+          expectations. It has become the centerpiece of our space.
         </p>
         <div>
-          <h4 class="font-bold text-brand-accent tracking-wide uppercase text-sm">Priya Sharma</h4>
-          <span class="text-white/50 text-xs tracking-widest uppercase">Commercial Client, Warangal</span>
+          <h4
+            class="font-bold text-brand-accent tracking-wide uppercase text-sm"
+          >
+            Priya Sharma
+          </h4>
+          <span class="text-white/50 text-xs tracking-widest uppercase"
+            >Commercial Client, Warangal</span
+          >
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
        8. SERVICE AREAS
   ═══════════════════════════════════════════════ -->
-  <section class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg relative overflow-hidden">
-    <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-      
+  <section
+    class="py-24 sm:py-32 px-4 sm:px-6 bg-brand-bg relative overflow-hidden"
+  >
+    <div
+      class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center"
+    >
       <!-- Text/Lists -->
       <div class="lg:col-span-5 space-y-12">
         <div>
-          <span class="eyebrow text-brand-accent mb-4 block">Where We Create</span>
-          <h2 class="font-display text-4xl sm:text-5xl font-bold text-brand-primary mb-6">Serving Luxury Spaces</h2>
+          <span class="eyebrow text-brand-accent mb-4 block"
+            >Where We Create</span
+          >
+          <h2
+            class="font-display text-4xl sm:text-5xl font-bold text-brand-primary mb-6"
+          >
+            Serving Luxury Spaces
+          </h2>
           <p class="text-brand-text/80 text-lg font-light max-w-md">
-            We are proud to bring our handcrafted art to the most prestigious addresses across the region.
+            We are proud to bring our handcrafted art to the most prestigious
+            addresses across the region.
           </p>
         </div>
 
         <div class="flex gap-16">
           <!-- Regions -->
           <div>
-            <h4 class="font-bold text-brand-primary uppercase tracking-widest text-xs mb-4">Regions</h4>
-            <ul class="space-y-3 font-display text-xl text-brand-text/90 font-medium">
+            <h4
+              class="font-bold text-brand-primary uppercase tracking-widest text-xs mb-4"
+            >
+              Regions
+            </h4>
+            <ul
+              class="space-y-3 font-display text-xl text-brand-text/90 font-medium"
+            >
               <li>Hanumakonda</li>
               <li>Warangal</li>
               <li>Hyderabad</li>
@@ -319,7 +568,11 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <!-- Sectors -->
           <div>
-            <h4 class="font-bold text-brand-primary uppercase tracking-widest text-xs mb-4">Sectors</h4>
+            <h4
+              class="font-bold text-brand-primary uppercase tracking-widest text-xs mb-4"
+            >
+              Sectors
+            </h4>
             <ul class="space-y-2 text-brand-text/75 font-light">
               <li>Residential Homes</li>
               <li>Luxury Villas</li>
@@ -333,53 +586,85 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Clean Map / Visual -->
       <div class="lg:col-span-7">
-        <div class="aspect-[16/10] bg-white border border-brand-divider/40 p-2 overflow-hidden shadow-2xl relative">
+        <div
+          class="aspect-[16/10] bg-white border border-brand-divider/40 p-2 overflow-hidden shadow-2xl relative"
+        >
           <!-- Subtle overlay to make it look like an architectural plan or clean map -->
-          <img src="https://images.unsplash.com/photo-1574805726207-6c84c17b5eec?w=1000&q=80" alt="Architectural plan" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" loading="lazy" />
-          
+          <img
+            src="https://images.unsplash.com/photo-1574805726207-6c84c17b5eec?w=1000&q=80"
+            alt="Architectural plan"
+            class="w-full h-full object-cover opacity-80 mix-blend-luminosity"
+            loading="lazy"
+          />
+
           <!-- Elegant pin points -->
           <div class="absolute top-[40%] left-[30%] flex items-center gap-2">
-            <div class="w-3 h-3 bg-brand-accent rounded-full animate-ping absolute"></div>
+            <div
+              class="w-3 h-3 bg-brand-accent rounded-full animate-ping absolute"
+            >
+            </div>
             <div class="w-3 h-3 bg-brand-accent rounded-full relative"></div>
-            <span class="font-display font-bold text-brand-primary bg-white/90 backdrop-blur-sm px-2 py-1 text-xs">Warangal</span>
+            <span
+              class="font-display font-bold text-brand-primary bg-white/90 backdrop-blur-sm px-2 py-1 text-xs"
+              >Warangal</span
+            >
           </div>
-          
+
           <div class="absolute top-[55%] left-[65%] flex items-center gap-2">
-            <div class="w-3 h-3 bg-brand-accent rounded-full animate-ping absolute"></div>
+            <div
+              class="w-3 h-3 bg-brand-accent rounded-full animate-ping absolute"
+            >
+            </div>
             <div class="w-3 h-3 bg-brand-accent rounded-full relative"></div>
-            <span class="font-display font-bold text-brand-primary bg-white/90 backdrop-blur-sm px-2 py-1 text-xs">Hyderabad</span>
+            <span
+              class="font-display font-bold text-brand-primary bg-white/90 backdrop-blur-sm px-2 py-1 text-xs"
+              >Hyderabad</span
+            >
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
        9. FINAL CALL TO ACTION (Reused exact layout)
   ═══════════════════════════════════════════════ -->
-  <section class="relative py-28 sm:py-40 px-6 bg-brand-primary text-white text-center overflow-hidden border-t border-brand-accent/10">
+  <section
+    class="relative py-28 sm:py-40 px-6 bg-brand-primary text-white text-center overflow-hidden border-t border-brand-accent/10"
+  >
     <!-- Subtle background pattern -->
-    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div
+      class="absolute inset-0 opacity-5 pointer-events-none"
+      style="background-image: radial-gradient(circle, #E8A020 1px, transparent 1px); background-size: 32px 32px;"
+    >
+    </div>
 
     <div class="max-w-3xl mx-auto relative z-10">
-      <span class="eyebrow text-brand-accent mb-5 block">Start Your Project</span>
-      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
+      <span class="eyebrow text-brand-accent mb-5 block"
+        >Start Your Project</span
+      >
+      <h2
+        class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4"
+      >
         Ready to Transform<br />
         <span class="text-brand-accent italic">Your Walls?</span>
       </h2>
-      <p class="text-white/70 text-base sm:text-xl font-light mb-12 max-w-xl mx-auto">
+      <p
+        class="text-white/70 text-base sm:text-xl font-light mb-12 max-w-xl mx-auto"
+      >
         Let's create something extraordinary together.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
         <a
-          href="https://wa.me/919999999999?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+know+more+about+your+services."
+          href="https://wa.me/919701483107?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+know+more+about+your+services."
           target="_blank"
           rel="noopener noreferrer"
           class="glow-pulse inline-flex items-center gap-3 bg-brand-accent hover:bg-[#d4901a] text-brand-primary font-bold py-4 px-10 text-lg shadow-xl hover:scale-105 transition-transform duration-200"
         >
           <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
-            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"/>
+            <path
+              d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"
+            ></path>
           </svg>
           Chat on WhatsApp
         </a>
@@ -392,5 +677,4 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
 </Layout>
