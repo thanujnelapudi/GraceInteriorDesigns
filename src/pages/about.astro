@@ -78,32 +78,39 @@ import Layout from "../layouts/Layout.astro";
           class="absolute -inset-4 bg-brand-primary/5 transform -skew-y-2 group-hover:skew-y-0 transition-transform duration-700"
         >
         </div>
-        <div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-xl">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl border border-brand-accent/20">
           <img
             src="/HERO_IMG.png"
-            alt="Samuel — Proprietor & Principal Interior Designer, Grace Interior Designs"
+            alt="Samuel — Proprietor & Principal Interior Designer at Grace Interior Designs"
             class="w-full h-full object-cover object-[80%_center] transition-transform duration-1000 group-hover:scale-105"
             loading="lazy"
           />
-          <!-- Subtle bottom gradient for card legibility -->
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-60"></div>
+          <!-- Luxury gradient backdrop for lower overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0b132b]/95 via-[#1a2a6c]/50 to-transparent"></div>
 
-          <!-- Decorative gold line -->
+          <!-- Decorative gold vertical line -->
           <div
-            class="absolute left-0 top-10 bottom-10 w-0.5 bg-brand-accent/60"
+            class="absolute left-0 top-10 bottom-10 w-0.5 bg-brand-accent/70"
           >
           </div>
 
-          <!-- Proprietor badge / card -->
-          <div class="absolute bottom-4 left-4 right-4 bg-brand-primary/95 backdrop-blur-md border border-brand-accent/30 px-5 py-3.5 shadow-2xl flex items-center justify-between">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-                <h3 class="font-display font-bold text-white text-lg tracking-wide">Samuel</h3>
-              </div>
-              <p class="text-xs uppercase tracking-widest text-brand-accent font-semibold mt-0.5">Proprietor &amp; Interior Designer</p>
+          <!-- Editorial Proprietor Card (Seamless & Luxurious) -->
+          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <!-- Studio Name -->
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+              <span class="font-bodoni italic text-brand-accent text-sm tracking-wider">Grace Interior Designs</span>
             </div>
-            <span class="font-bodoni italic text-brand-accent text-xl opacity-80 select-none">Grace</span>
+            
+            <!-- Proprietor Name -->
+            <h3 class="font-bodoni text-3xl sm:text-4xl text-white font-medium tracking-tight mb-1">
+              Samuel
+            </h3>
+            
+            <!-- Title & Role -->
+            <p class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/80 font-medium">
+              Proprietor &amp; Lead Interior Designer
+            </p>
           </div>
         </div>
       </div>
