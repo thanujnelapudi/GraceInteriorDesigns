@@ -1,10 +1,11 @@
 ---
 // src/layouts/Layout.astro
-import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
-import Lightbox from '../components/Lightbox.astro';
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Lightbox from "../components/Lightbox.astro";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -15,32 +16,35 @@ interface Props {
 const {
   title = "Grace Interior Designs — Wall Art & Painting Studio | Hanumakonda, Warangal & Hyderabad",
   description = "Custom wall murals, floral arts, Warli paintings, canvas art, and photo prints crafted for homes and offices in Hanumakonda, Warangal, and Hyderabad, India.",
-  image = "/og-image.jpg"
+  image = "/og-image.jpg",
 } = Astro.props;
 ---
+
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    
+
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:image" content={image} />
-    
+
     <!-- Favicon / Fonts -->
     <link rel="icon" type="image/png" href="/Logo.png" />
     <link rel="apple-touch-icon" href="/Logo.png" />
   </head>
-  <body class="font-body bg-brand-bg text-brand-text min-h-screen flex flex-col selection:bg-brand-accent selection:text-brand-primary">
+  <body
+    class="font-body bg-brand-bg text-brand-text min-h-screen flex flex-col selection:bg-brand-accent selection:text-brand-primary"
+  >
     <Navbar />
     <main class="flex-grow">
       <slot />
