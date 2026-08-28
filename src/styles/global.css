@@ -41,6 +41,52 @@ body {
   font-family: var(--font-body);
 }
 
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(26 42 108 / 0.18) 0%,
+    rgb(26 42 108 / 0.42) 45%,
+    rgb(26 42 108 / 0.94) 100%
+  );
+}
+
+.signature-stage {
+  min-height: 500px;
+  background:
+    linear-gradient(180deg, rgb(26 42 108 / 0.2), rgb(26 42 108 / 0.92)),
+    linear-gradient(115deg, rgb(26 42 108 / 0.88), rgb(26 42 108 / 0.35));
+}
+
+.signature-copy {
+  border-left: 2px solid var(--color-brand-accent);
+  padding-left: clamp(1.25rem, 4vw, 4rem);
+}
+
+.cta-stage {
+  background: var(--color-brand-bg);
+  color: var(--color-brand-primary);
+}
+
+.cta-stage h2 {
+  color: var(--color-brand-primary);
+}
+
+.cta-stage p {
+  color: rgb(44 44 42 / 0.7);
+}
+
 /* Eyebrow label — small uppercase tracking label above headings */
 .eyebrow {
   font-family: var(--font-body);
@@ -61,7 +107,7 @@ body {
 /* Signature section giant text */
 .signature-text {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3rem, 8vw, 8rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;

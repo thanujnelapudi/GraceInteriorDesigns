@@ -36,7 +36,7 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
         loading="eager"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/50 to-brand-primary/20"></div>
+      <div class="hero-gradient absolute inset-0"></div>
     </div>
 
     <!-- Hero content — bottom anchored -->
@@ -144,7 +144,7 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
   <!-- ═══════════════════════════════════════════════
        SIGNATURE MOMENT
   ═══════════════════════════════════════════════ -->
-  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+  <section class="signature-stage relative flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
         src={signatureImage}
@@ -152,13 +152,13 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
         class="w-full h-full object-cover"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-brand-primary/85"></div>
+        <div class="hero-gradient absolute inset-0"></div>
     </div>
-    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+    <div class="signature-copy relative z-10 text-left px-6 max-w-5xl mx-auto">
       <div class="reveal-up">
         <p class="signature-text text-white leading-none">Every Wall</p>
-        <p class="signature-text leading-none">Deserves</p>
-        <p class="signature-text leading-none italic text-brand-accent">A Story.</p>
+        <p class="signature-text text-white leading-none">Deserves</p>
+          <p class="signature-text leading-none italic text-brand-accent">A Story.</p>
       </div>
     </div>
   </section>
@@ -166,14 +166,14 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
   <!-- ═══════════════════════════════════════════════
        CONSULTATION CTA
   ═══════════════════════════════════════════════ -->
-  <section class="relative py-28 sm:py-40 px-6 bg-brand-bg text-center overflow-hidden border-t border-brand-divider/30">
+  <section class="cta-stage relative py-20 sm:py-28 px-6 text-center overflow-hidden border-t border-brand-accent/30">
     <div class="max-w-3xl mx-auto">
-      <span class="eyebrow text-brand-accent mb-5 block reveal-up">Start Your Project</span>
-      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-primary leading-tight mb-6 reveal-up" style="transition-delay:0.1s">
+      <span class="eyebrow text-brand-accent mb-4 block reveal-up">Start Your Project</span>
+      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4 reveal-up" style="transition-delay:0.1s">
         Ready to Transform<br />
         <span class="italic font-normal text-brand-accent">Your Walls?</span>
       </h2>
-      <p class="text-brand-text/60 text-base sm:text-xl font-light mb-12 max-w-xl mx-auto reveal-up" style="transition-delay:0.2s">
+      <p class="text-white/70 text-base sm:text-xl font-light mb-8 max-w-xl mx-auto reveal-up" style="transition-delay:0.2s">
         Let's design something unique together — tailored to your space, your story, your vision.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-up" style="transition-delay:0.3s">
@@ -181,7 +181,7 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
           href="https://wa.me/919701483107?text=Hi+Grace+Interior+Designs%2C+I%27d+like+to+book+a+consultation."
           target="_blank"
           rel="noopener noreferrer"
-          class="glow-pulse inline-flex items-center gap-3 bg-brand-primary hover:bg-[#1e3280] text-white font-bold py-4 px-10 text-base shadow-xl hover:scale-105 transition-transform duration-200"
+          class="glow-pulse inline-flex items-center gap-3 bg-brand-accent hover:bg-[#d4901a] text-brand-primary font-bold py-4 px-10 text-base shadow-xl hover:scale-105 transition-transform duration-200"
         >
           <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
             <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.334 5.006l-1.416 5.176 5.297-1.389c1.472.802 3.136 1.226 4.773 1.227h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.037-5.176-2.925-7.065-1.888-1.888-4.397-2.927-7.066-2.927zm5.228 14.108c-.216.606-1.258 1.164-1.74 1.214-.482.05-1.107.234-3.649-.787-2.73-1.096-4.492-3.868-4.629-4.051-.137-.183-1.107-1.472-1.107-2.806 0-1.334.698-1.99.948-2.256.25-.266.549-.333.732-.333.183 0 .366.002.524.01.166.008.391-.063.612.467.225.541.766 1.87.833 2.008.067.138.113.3.023.482-.09.183-.135.298-.266.457-.132.158-.278.354-.397.476-.132.135-.27.283-.116.549.154.266.686 1.134 1.472 1.834 1.011.901 1.864 1.181 2.13 1.314.266.133.424.116.582-.066.158-.183.674-.787.857-1.054.183-.266.366-.222.616-.133.25.09 1.581.745 1.854.882.274.137.457.208.524.324.067.116.067.674-.149 1.28z"/>
@@ -189,8 +189,14 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
           Book a Consultation
         </a>
         <a
+          href="tel:+919701483107"
+          class="inline-block border border-brand-primary/40 text-brand-primary hover:border-brand-accent hover:text-brand-accent px-8 py-4 text-base font-semibold tracking-wide transition-all duration-300"
+        >
+          Call +91 9701483107
+        </a>
+        <a
           href="/contact"
-          class="inline-block border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-10 py-4 text-base font-semibold tracking-wide transition-all duration-300"
+          class="inline-block border border-brand-primary/40 text-brand-primary hover:border-brand-accent hover:text-brand-accent px-10 py-4 text-base font-semibold tracking-wide transition-all duration-300"
         >
           Send an Enquiry
         </a>
