@@ -62,6 +62,16 @@ body::-webkit-scrollbar {
   );
 }
 
+.hero-bg {
+  object-position: 74% center;
+}
+
+@media (min-width: 640px) {
+  .hero-bg {
+    object-position: center;
+  }
+}
+
 .signature-stage {
   min-height: 500px;
   background:

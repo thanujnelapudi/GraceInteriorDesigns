@@ -2,17 +2,17 @@
 // src/components/Navbar.astro
 ---
 <header class="sticky top-0 z-50 bg-brand-bg/95 backdrop-blur-md border-b border-brand-divider/40 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
     <nav class="flex items-center justify-between py-3.5 sm:py-4" aria-label="Main Navigation">
       <!-- Logo -->
-      <a href="/" class="group focus:outline-none py-1" aria-label="Grace Interior Designs Home">
-        <span class="font-bodoni italic font-medium text-2xl sm:text-[1.75rem] text-brand-primary group-hover:text-brand-accent transition-colors duration-300 tracking-[0.02em] whitespace-nowrap">
+      <a href="/" class="group focus:outline-none py-1 flex items-center" aria-label="Grace Interior Designs Home">
+        <span class="font-bodoni italic font-medium text-xl sm:text-2xl lg:text-[1.75rem] text-brand-primary group-hover:text-brand-accent transition-colors duration-300 tracking-[0.02em] whitespace-nowrap">
           Grace Interior Designs
         </span>
       </a>
 
       <!-- Desktop Navigation Links & CTA -->
-      <div class="hidden md:flex items-center gap-7 lg:gap-8">
+      <div class="desktop-nav hidden md:flex items-center gap-7 lg:gap-8">
         <a href="/" class="nav-link text-brand-text/90 hover:text-brand-accent transition-colors text-[15px] lg:text-[16px] font-medium tracking-[0.02em]" data-active="/">Home</a>
         <a href="/gallery" class="nav-link text-brand-text/90 hover:text-brand-accent transition-colors text-[15px] lg:text-[16px] font-medium tracking-[0.02em]" data-active="/gallery">Portfolio</a>
         <a href="/categories" class="nav-link text-brand-text/90 hover:text-brand-accent transition-colors text-[15px] lg:text-[16px] font-medium tracking-[0.02em]" data-active="/categories">Services</a>
@@ -28,35 +28,68 @@
       </div>
 
       <!-- Hamburger Menu for Mobile -->
-      <button id="menuBtn" class="md:hidden text-brand-primary focus:outline-none p-1.5 -mr-1.5" aria-label="Open menu">
+      <button 
+        id="menuBtn" 
+        class="mobile-menu-button md:hidden p-2 rounded-lg text-brand-primary hover:text-brand-accent hover:bg-brand-primary/5 transition focus:outline-none" 
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </nav>
   </div>
+</header>
 
-  <!-- Mobile Fullscreen Overlay -->
-  <div id="mobileMenu" class="fixed inset-0 z-50 bg-brand-bg/98 hidden flex-col items-center justify-center space-y-7 text-xl font-display">
-    <a href="/" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-semibold text-2xl" data-active="/">Home</a>
-    <a href="/gallery" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-semibold text-2xl" data-active="/gallery">Portfolio</a>
-    <a href="/categories" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-semibold text-2xl" data-active="/categories">Services</a>
-    <a href="/about" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-semibold text-2xl" data-active="/about">About</a>
-    
-    <a 
-      href="/contact" 
-      class="mt-4 inline-flex items-center justify-center bg-brand-accent hover:bg-[#d9941a] text-brand-primary font-medium font-body text-base px-7 py-3 rounded-full shadow-sm transition"
-    >
-      Book a Consultation
+<!-- Mobile Fullscreen Overlay (Placed outside header) -->
+<div 
+  id="mobileMenu" 
+  class="fixed inset-0 z-[100] bg-brand-bg/98 backdrop-blur-xl hidden flex-col justify-between p-6 sm:p-8"
+  aria-modal="true"
+  role="dialog"
+>
+  <!-- Top bar with logo and close button -->
+  <div class="flex items-center justify-between border-b border-brand-divider/40 pb-4">
+    <a href="/" class="focus:outline-none" id="mobileLogoLink">
+      <span class="font-bodoni italic font-medium text-xl sm:text-2xl text-brand-primary tracking-[0.02em]">
+        Grace Interior Designs
+      </span>
     </a>
-
-    <button id="closeMenu" aria-label="Close menu" class="mt-8 text-brand-primary p-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <button 
+      id="closeMenu" 
+      aria-label="Close navigation menu" 
+      class="p-2 rounded-full text-brand-primary hover:text-brand-accent hover:bg-brand-primary/5 transition focus:outline-none"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
-</header>
+
+  <!-- Center Links -->
+  <div class="flex flex-col items-center justify-center space-y-6 my-auto text-center">
+    <a href="/" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-display text-2xl font-semibold tracking-wide" data-active="/">Home</a>
+    <a href="/gallery" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-display text-2xl font-semibold tracking-wide" data-active="/gallery">Portfolio</a>
+    <a href="/categories" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-display text-2xl font-semibold tracking-wide" data-active="/categories">Services</a>
+    <a href="/about" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-display text-2xl font-semibold tracking-wide" data-active="/about">About</a>
+    <a href="/contact" class="mobile-nav-link text-brand-primary hover:text-brand-accent transition font-display text-2xl font-semibold tracking-wide" data-active="/contact">Contact</a>
+    
+    <div class="w-12 h-px bg-brand-accent/40 my-2"></div>
+
+    <a 
+      href="/contact" 
+      class="mobile-nav-link inline-flex items-center justify-center bg-brand-accent hover:bg-[#d9941a] text-brand-primary font-semibold font-body text-base px-8 py-3.5 rounded-full shadow-md transition"
+    >
+      Book a Consultation
+    </a>
+  </div>
+
+  <!-- Footer Info in Mobile Menu -->
+  <div class="text-center text-xs text-brand-text/50 pt-4 border-t border-brand-divider/30">
+    Hanumakonda &bull; Warangal &bull; Hyderabad
+  </div>
+</div>
 
 <style>
   .nav-link {
@@ -81,6 +114,10 @@
     background-color: var(--color-brand-accent, #E8A020);
     border-radius: 9999px;
   }
+
+  .mobile-nav-link.is-active {
+    color: var(--color-brand-accent, #E8A020) !important;
+  }
 </style>
 
 <script is:inline>
@@ -88,17 +125,35 @@
     const menuBtn = document.getElementById('menuBtn');
     const closeBtn = document.getElementById('closeMenu');
     const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link, #mobileLogoLink');
 
-    menuBtn?.addEventListener('click', () => {
+    function openNav() {
       mobileMenu?.classList.remove('hidden');
       mobileMenu?.classList.add('flex');
+      menuBtn?.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-    });
+    }
 
-    closeBtn?.addEventListener('click', () => {
+    function closeNav() {
       mobileMenu?.classList.add('hidden');
       mobileMenu?.classList.remove('flex');
+      menuBtn?.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+    }
+
+    menuBtn?.addEventListener('click', openNav);
+    closeBtn?.addEventListener('click', closeNav);
+
+    // Close mobile menu when clicking any navigation link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+        closeNav();
+      }
     });
 
     // Highlight active link based on current path
@@ -108,9 +163,6 @@
       const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
       if (isActive) {
         link.classList.add('is-active');
-        if (link.classList.contains('mobile-nav-link')) {
-          link.classList.add('text-brand-accent');
-        }
       }
     });
   });

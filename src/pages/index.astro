@@ -8,9 +8,13 @@ import { CATEGORIES } from '../utils/categories';
 const allWorks = await getCollection('works');
 // Primary featured work — for the case study editorial spread
 const primaryWork = allWorks.find(w => w.data.id === 'royal-heritage-mural') || allWorks.find(w => w.data.featured);
-// Gallery works — 3 different featured/notable works for the transformation gallery
-const galleryWorks = allWorks.filter(w => w.data.id !== primaryWork?.data.id).slice(0, 3);
 const categoriesList = Object.values(CATEGORIES);
+// Gallery works — pick one from each different category for varied recent transformations
+const categories = ['wall-murals', 'floral-arts', 'school-art', 'wall-art'];
+const galleryWorks = categories
+  .map(cat => allWorks.find(w => w.data.category === cat && w.data.id !== primaryWork?.data.id))
+  .filter(Boolean)
+  .slice(0, 3);
 
 // Curated editorial images for sections
 const heroImage = "/HERO_IMG.jpeg";
@@ -32,7 +36,7 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
         id="heroBg"
         src={heroImage}
         alt="Luxury interior wall art"
-        class="ken-burns w-full h-full object-cover object-center"
+        class="hero-bg ken-burns w-full h-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
       />
@@ -298,7 +302,7 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {galleryWorks.map((w, i) => (
           <a
-            href={`/categories/${w.data.category}`}
+            href="/gallery"
             class={`group relative overflow-hidden block ${i === 0 ? 'sm:row-span-2' : ''}`}
             style={i === 0 ? 'height: 520px;' : 'height: 250px;'}
           >
@@ -333,20 +337,20 @@ const signatureImage = "https://images.unsplash.com/photo-1586023492125-27b2c045
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           {
-            quote: "Grace Interior Designs created a stunning 14ft floral wall art in our villa living area. Everyone who visits is spellbound — it's become the soul of our home.",
-            name: "Priya & Vikram Reddy",
+            quote: "Grace Interior Designs created a stunning floral wall art in our living room. Everyone who visits is spellbound — it has truly become the soul of our home.",
+            name: "Ravindranath",
             location: "Hanumakonda",
             service: "Floral Arts"
           },
           {
-            quote: "The grand outdoor elephant mural on our villa exterior is a true masterpiece. Incredible relief sculpting and durable weather-proof painting!",
-            name: "Anand Rao",
+            quote: "The wall mural on our villa exterior is a true masterpiece. Incredible craftsmanship and the weather-proof painting has held up beautifully.",
+            name: "Venu",
             location: "Warangal",
             service: "Wall Murals"
           },
           {
-            quote: "Our preschool campus walls were turned into a colorful wonderland of animals, alphabet trails, and space maps. Kids and parents love it!",
-            name: "Dr. Sunitha Reddy",
+            quote: "Our school campus walls were transformed into a colorful wonderland. The kids absolutely love the paintings and parents are amazed every single time!",
+            name: "Shashidar",
             location: "Hyderabad",
             service: "School & Educational Art"
           }
